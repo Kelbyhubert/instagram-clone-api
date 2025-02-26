@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0.4
+    container_name: mysql
+    restart: always
+    ports:
+      - 3309:3306
+    environment:
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: instagram_clone
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:

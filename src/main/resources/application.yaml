@@ -1,0 +1,28 @@
+spring:
+    application:
+        name: instagram_clone_api
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3309/instagram_clone
+        username: root
+        password: root
+    jpa:
+        hibernate:
+            ddl-auto: none
+    flyway:
+        baseline-on-migrate: true
+        locations:
+        - classpath:db/migration/user
+        - classpath:db/migration/post
+        - classpath:db/migration/comment
+        - classpath:db/migration/like
+
+server:
+  port: 8081 
+
+
+ig:
+    jwt:
+        secretkey: a74d7c21293f3a4aa6ed8630e5607857df03f83f0d92510fed6d940d9206d9886bbee2b48c4969a4ce5ffcd38dbab08aa46f1207aa8c731e5e8e56d7595d3ef8753593cdf434c0ab49499241385d4cc69ef30a24c72fafa5c1c160dc63111295c4a260fe0e0c539ff6dfeddd9d3f2f1d9c3524a4e3edf05f2e905e9fd716c3b9866e17b4955538c11da5ca339cd126e6229b662bcfbc8ae1bf3b21e33a01973a0a9c2ce90a6407bda0d808fcc304ee2288fc1a68b34b542f04a45d61a6c3e544da3fd25abe9b1bb0b887d834cdd0acc481313901198b7c6e0e0bc894487329f8a307d936b7b27ba2a40cf1c4dcc202ec91a5016b90d43ad8e2196c71b1200b41
+        # 24 hours
+        jwtExpirationMs: 86400000 
