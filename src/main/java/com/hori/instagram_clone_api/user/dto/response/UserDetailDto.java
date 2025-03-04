@@ -5,5 +5,6 @@ public record UserDetailDto(
     String username,
     String email,
     String phoneNumber,
-    String profilePictureUrl
+    String profilePictureUrl,
+    Long roleId
 ) {}

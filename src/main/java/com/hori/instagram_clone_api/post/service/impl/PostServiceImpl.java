@@ -112,21 +112,7 @@ public class PostServiceImpl implements PostService {
         postRepository.save(post);
     }
 
-    @Override
-    public List<PostDto> getUserPostList(Long userId) {
-        User user = userService.getUserDetails(userId);
 
-        List<PostDto> postDtos = user.getLikedPosts().stream()
-                                        .map(post -> PostDto
-                                            .from(
-                                                post, 
-                                                commentService.totalCommentByPost(post.getId()), 
-                                                postRepository.countLikesByPostId(post.getId()), 
-                                                post.getLikes().contains(user)
-                                            )
-                                        ).toList();
-        return postDtos;
-    }
 
 
     

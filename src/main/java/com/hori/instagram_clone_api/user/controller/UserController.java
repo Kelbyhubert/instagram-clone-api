@@ -65,7 +65,8 @@ public class UserController {
     }
 
     private UserDetailDto userDetailDtoMapper(User user) {
-        return new UserDetailDto(user.getId(), user.getUsername(), user.getEmail(), user.getPhoneNumber(), user.getProfilePicture());
+        // return the role id 
+        return new UserDetailDto(user.getId(), user.getUsername(), user.getEmail(), user.getPhoneNumber(), user.getProfilePicture() , user.getRole().getId());
     }
 
     @GetMapping(
